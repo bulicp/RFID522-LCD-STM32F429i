@@ -1,0 +1,2 @@
+# RFID522-LCD-STM32F429i
+RFID access control with MFRC522 + LCD on STM32F429i
