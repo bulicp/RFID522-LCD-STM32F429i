@@ -1,0 +1,4 @@
+UART.c:36:6:USART_Init	8	static
+UART.c:73:6:HAL_UART_TxCpltCallback	0	static
+UART.c:92:6:HAL_UART_RxCpltCallback	0	static
+UART.c:111:6:HAL_UART_ErrorCallback	0	static

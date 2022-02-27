@@ -1,0 +1,2 @@
+stm32f4xx_hal_msp_spi.c:19:6:HAL_SPI_MspInit	64	static
+stm32f4xx_hal_msp_spi.c:75:6:HAL_SPI_MspDeInit	8	static

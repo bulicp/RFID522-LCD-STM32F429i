@@ -1,0 +1,2 @@
+GPIO.c:10:6:GPIOB_Init	40	static
+GPIO.c:28:6:GPIOA_Init	40	static

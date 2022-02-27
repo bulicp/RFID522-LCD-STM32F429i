@@ -1,0 +1,12 @@
+RFID-tag.c:39:14:TAG_WriteName	40	static
+RFID-tag.c:52:14:TAG_WriteSurname	40	static
+RFID-tag.c:75:14:TAG_ReadPin	32	static
+RFID-tag.c:86:14:TAG_ReadConfig	40	static
+RFID-tag.c:65:14:TAG_WritePin	48	static
+RFID-tag.c:94:14:TAG_ReadName	40	static
+RFID-tag.c:102:14:TAG_ReadSurname	40	static
+RFID-tag.c:110:14:TAG_ReadTrailer	40	static
+RFID-tag.c:121:14:TAG_CheckID	28	static
+RFID-tag.c:142:14:TAG_ReadMifareClassicSector	56	static
+RFID-tag.c:184:14:TAG_ReadMifareClassic1K	40	static
+RFID-tag.c:226:14:SetNewTrailerForSector	4	static

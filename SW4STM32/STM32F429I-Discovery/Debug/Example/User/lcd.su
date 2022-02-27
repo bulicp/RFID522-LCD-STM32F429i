@@ -1,0 +1,2 @@
+lcd.c:106:13:LCD_Show_Feature	40	static
+lcd.c:50:6:LCD_demo	8	static

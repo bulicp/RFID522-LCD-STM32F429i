@@ -1,0 +1,4 @@
+SPI.c:11:19:InitSPI	8	static
+SPI.c:41:6:HAL_SPI_TxRxCpltCallback	0	static
+SPI.c:51:6:HAL_SPI_ErrorCallback	0	static
+SPI.c:64:9:SPI_TransmitByte	24	static
