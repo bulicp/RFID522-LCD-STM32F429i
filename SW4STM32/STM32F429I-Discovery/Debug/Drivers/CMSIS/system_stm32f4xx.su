@@ -1,2 +1,2 @@
-system_stm32f4xx.c:142:6:SystemInit	0	static
-system_stm32f4xx.c:215:6:SystemCoreClockUpdate	8	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/system_stm32f4xx.c:142:6:SystemInit	0	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/system_stm32f4xx.c:215:6:SystemCoreClockUpdate	0	static

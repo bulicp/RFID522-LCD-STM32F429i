@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -21,7 +21,7 @@ Example/Utilities/lcd_log.o: /Users/patricio/Library/Mobile\ Documents/com~apple
 clean: clean-Example-2f-Utilities
 
 clean-Example-2f-Utilities:
-	-$(RM) ./Example/Utilities/lcd_log.d ./Example/Utilities/lcd_log.o
+	-$(RM) ./Example/Utilities/lcd_log.d ./Example/Utilities/lcd_log.o ./Example/Utilities/lcd_log.su
 
 .PHONY: clean-Example-2f-Utilities
 

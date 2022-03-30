@@ -1,2 +1,2 @@
-lcd.c:106:13:LCD_Show_Feature	40	static
-lcd.c:50:6:LCD_demo	8	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/lcd.c:106:13:LCD_Show_Feature	40	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/lcd.c:50:6:LCD_demo	8	static

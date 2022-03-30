@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -31,7 +31,7 @@ Drivers/BSP/Components/stmpe811.o: /Users/patricio/Library/Mobile\ Documents/com
 clean: clean-Drivers-2f-BSP-2f-Components
 
 clean-Drivers-2f-BSP-2f-Components:
-	-$(RM) ./Drivers/BSP/Components/ili9341.d ./Drivers/BSP/Components/ili9341.o ./Drivers/BSP/Components/l3gd20.d ./Drivers/BSP/Components/l3gd20.o ./Drivers/BSP/Components/stmpe811.d ./Drivers/BSP/Components/stmpe811.o
+	-$(RM) ./Drivers/BSP/Components/ili9341.d ./Drivers/BSP/Components/ili9341.o ./Drivers/BSP/Components/ili9341.su ./Drivers/BSP/Components/l3gd20.d ./Drivers/BSP/Components/l3gd20.o ./Drivers/BSP/Components/l3gd20.su ./Drivers/BSP/Components/stmpe811.d ./Drivers/BSP/Components/stmpe811.o ./Drivers/BSP/Components/stmpe811.su
 
 .PHONY: clean-Drivers-2f-BSP-2f-Components
 

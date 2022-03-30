@@ -1,5 +1,5 @@
-ts_calibration.c:150:13:WaitForPressedState	24	static
-ts_calibration.c:52:6:Touchscreen_Calibration	48	static
-ts_calibration.c:181:10:Calibration_GetX	0	static
-ts_calibration.c:191:10:Calibration_GetY	0	static
-ts_calibration.c:201:9:IsCalibrationDone	0	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/ts_calibration.c:150:13:WaitForPressedState	24	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/ts_calibration.c:52:6:Touchscreen_Calibration	48	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/ts_calibration.c:181:10:Calibration_GetX	0	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/ts_calibration.c:191:10:Calibration_GetY	0	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/ts_calibration.c:201:9:IsCalibrationDone	0	static

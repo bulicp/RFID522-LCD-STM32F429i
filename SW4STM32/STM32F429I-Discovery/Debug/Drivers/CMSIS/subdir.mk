@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -21,7 +21,7 @@ Drivers/CMSIS/system_stm32f4xx.o: /Users/patricio/Library/Mobile\ Documents/com~
 clean: clean-Drivers-2f-CMSIS
 
 clean-Drivers-2f-CMSIS:
-	-$(RM) ./Drivers/CMSIS/system_stm32f4xx.d ./Drivers/CMSIS/system_stm32f4xx.o
+	-$(RM) ./Drivers/CMSIS/system_stm32f4xx.d ./Drivers/CMSIS/system_stm32f4xx.o ./Drivers/CMSIS/system_stm32f4xx.su
 
 .PHONY: clean-Drivers-2f-CMSIS
 

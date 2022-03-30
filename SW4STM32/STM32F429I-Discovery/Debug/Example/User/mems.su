@@ -1,2 +1,2 @@
-mems.c:205:13:Gyroscope_DrawBackground	8	static
-mems.c:70:6:MEMS_demo	24	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/mems.c:205:13:Gyroscope_DrawBackground	8	static
+/Users/patricio/Library/Mobile Documents/com~apple~CloudDocs/Delo/STM32CubeIDE/RFID-STM32F429I/BSP/Src/mems.c:70:6:MEMS_demo	24	static

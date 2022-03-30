@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 -include ../makefile.init
@@ -47,6 +47,9 @@ BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ART
 EXECUTABLES += \
 STM32F429I-Discovery.elf \
 
+MAP_FILES += \
+STM32F429I-Discovery.map \
+
 SIZE_OUTPUT += \
 default.size.stdout \
 
@@ -64,7 +67,7 @@ all: main-build
 main-build: STM32F429I-Discovery.elf secondary-outputs
 
 # Tool invocations
-STM32F429I-Discovery.elf: $(OBJS) $(USER_OBJS) ../STM32F429ZITx_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+STM32F429I-Discovery.elf STM32F429I-Discovery.map: $(OBJS) $(USER_OBJS) ../STM32F429ZITx_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-gcc -o "STM32F429I-Discovery.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"../STM32F429ZITx_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F429I-Discovery.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
@@ -86,7 +89,7 @@ STM32F429I-Discovery.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_D
 
 # Other Targets
 clean:
-	-$(RM) STM32F429I-Discovery.bin STM32F429I-Discovery.elf STM32F429I-Discovery.list default.size.stdout
+	-$(RM) STM32F429I-Discovery.bin STM32F429I-Discovery.elf STM32F429I-Discovery.list STM32F429I-Discovery.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)

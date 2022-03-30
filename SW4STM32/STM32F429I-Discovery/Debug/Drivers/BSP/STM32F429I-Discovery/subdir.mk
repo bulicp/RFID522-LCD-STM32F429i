@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -51,7 +51,7 @@ Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.o: /Users/patricio/Libr
 clean: clean-Drivers-2f-BSP-2f-STM32F429I-2d-Discovery
 
 clean-Drivers-2f-BSP-2f-STM32F429I-2d-Discovery:
-	-$(RM) ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_eeprom.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_eeprom.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_gyroscope.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_gyroscope.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.o
+	-$(RM) ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery.su ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_eeprom.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_eeprom.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_eeprom.su ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_gyroscope.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_gyroscope.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_gyroscope.su ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_io.su ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_lcd.su ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_sdram.su ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.d ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.o ./Drivers/BSP/STM32F429I-Discovery/stm32f429i_discovery_ts.su
 
 .PHONY: clean-Drivers-2f-BSP-2f-STM32F429I-2d-Discovery
 

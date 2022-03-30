@@ -21,6 +21,7 @@ uint8_t MIFARE_TwoStepHelper(uint8_t command, uint8_t blockAddr, long data);
 
 
 /* Public functions ----------------------------------------------------------*/
+
 void PCD_WriteRegister(	uint8_t reg,		///< The register to write to. One of the PCD_Register enums.
 						uint8_t value		///< The value to write.
 						) {
@@ -97,9 +98,9 @@ void PCD_ReadRegisterMulti(	uint8_t reg,		///< The register to read from. One of
 			for (uint8_t i = rxAlign; i <= 7; i++) {
 				mask |= (1 << i);
 			}
-			// Apply mask to both current value of rcvDatav[0] and add the new data in rcvData.
-			// clear bits rcvData[0] and add new bits only at positions RxAlign...7:
-			rcvData[0] = (rcvData[0] & 0x00) | (readdata & mask);
+			// Apply mask to both current value of rcvDatav[0] and new data and add the new data in rcvData.
+			// clear RxAlign...7 bits in rcvData[0] and add new bits only at positions RxAlign...7:
+			rcvData[0] = (rcvData[0] & ~mask) | (readdata & mask);
 		}
 		else { // Normal case
 			rcvData[index] = readdata;	// Read value and tell that we want to read the same address again.
@@ -142,9 +143,10 @@ void PCD_ClearRegisterBitMask(	uint8_t reg,	///< The register to update. One of 
  *
  * @return STATUS_OK on success, STATUS_??? otherwise.
  */
-StatusCode_t PCD_CalculateCRC(	uint8_t *data,		///< In: Pointer to the data to transfer to the FIFO for CRC calculation.
-						 	 uint8_t length,	///< In: The number of uint8_ts to transfer.
-							uint8_t *result	///< Out: Pointer to result buffer. Result is written to result[0..1], low uint8_t first.
+StatusCode_t PCD_CalculateCRC(
+							uint8_t *data,		///< In: Pointer to the data to transfer to the FIFO for CRC calculation.
+							uint8_t length,		///< In: The number of uint8_ts to transfer.
+							uint8_t *result		///< Out: Pointer to result buffer. Result is written to result[0..1], low uint8_t first.
 					 	 ) {
 	PCD_WriteRegister(CommandReg, PCD_Idle);			// Stop any active command.
 	PCD_WriteRegister(DivIrqReg, 0x04);					// Clear the CRCIRq interrupt request bit
@@ -190,7 +192,7 @@ void PCD_Init() {
 	// TPrescaler_Hi are the four low bits in TModeReg. TPrescaler_Lo is TPrescalerReg.
     PCD_WriteRegister(TModeReg, 0x80);			// TAuto=1; timer starts automatically at the end of the transmission in all communication modes at all speeds
 
-    PCD_WriteRegister(TPrescalerReg, 0xA9);	// TPreScaler = TModeReg[3..0]:TPrescalerReg, ie 0x0A9 = 169 => f_timer=40kHz, ie a timer period of 25µs.
+    PCD_WriteRegister(TPrescalerReg, 0xA9);		// TPreScaler = TModeReg[3..0]:TPrescalerReg, ie 0x0A9 = 169 => f_timer=40kHz, ie a timer period of 25µs.
 
     PCD_WriteRegister(TReloadRegH, 0x03);		// Reload timer with 0x3E8 = 1000, ie 25ms before timeout.
 
@@ -237,6 +239,10 @@ void PCD_AntennaOn() {
 	}
 } // End PCD_AntennaOn()
 
+
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////
 // Functions for communicating with PICCs
 /////////////////////////////////////////////////////////////////////////////////////
@@ -251,9 +257,9 @@ StatusCode_t PCD_TransceiveData(	uint8_t *sendData,		///< Pointer to the data to
 							uint8_t sendLen,		///< Number of uint8_ts to transfer to the FIFO.
 							uint8_t *backData,		///< NULL or pointer to buffer if data should be read back after executing the command.
 							uint8_t *backLen,		///< In: Max number of uint8_ts to write to *backData. Out: The number of uint8_ts returned.
-							uint8_t *validBits,	///< In/Out: The number of valid bits in the last uint8_t. 0 for 8 valid bits. Default NULL.
+							uint8_t *validBits,		///< In/Out: The number of valid bits in the last uint8_t. 0 for 8 valid bits. Default NULL.
 							uint8_t rxAlign,		///< In: Defines the bit position in backData[0] for the first bit received. Default 0.
-							bool checkCRC		///< In: True => The last two uint8_ts of the response is assumed to be a CRC_A that must be validated.
+							bool checkCRC			///< In: True => The last two uint8_ts of the response is assumed to be a CRC_A that must be validated.
 							) {
 	uint8_t waitIRq = 0x30;		// RxIRq and IdleIRq
 	return PCD_CommunicateWithPICC(PCD_Transceive, waitIRq, sendData, sendLen, backData, backLen, validBits, rxAlign, checkCRC);
@@ -271,9 +277,9 @@ StatusCode_t PCD_CommunicateWithPICC(uint8_t command,		///< The command to execu
 								uint8_t sendLen,		///< Number of uint8_ts to transfer to the FIFO.
 								uint8_t *backData,		///< NULL or pointer to buffer if data should be read back after executing the command.
 								uint8_t *backLen,		///< In: Max number of uint8_ts to write to *backData. Out: The number of uint8_ts returned.
-								uint8_t *validBits,	///< In/Out: The number of valid bits in the last uint8_t. 0 for 8 valid bits.
+								uint8_t *validBits,		///< In/Out: The number of valid bits in the last uint8_t. 0 for 8 valid bits.
 								uint8_t rxAlign,		///< In: Defines the bit position in backData[0] for the first bit received. Default 0.
-								bool checkCRC		///< In: True => The last two uint8_ts of the response is assumed to be a CRC_A that must be validated.
+								bool checkCRC			///< In: True => The last two uint8_ts of the response is assumed to be a CRC_A that must be validated.
 								) {
 	uint8_t n, _validBits;
 	unsigned int i;
@@ -284,7 +290,7 @@ StatusCode_t PCD_CommunicateWithPICC(uint8_t command,		///< The command to execu
 
 	PCD_WriteRegister(CommandReg, PCD_Idle);			// Stop any active command.
 	PCD_WriteRegister(ComIrqReg, 0x7F);					// Clear all seven interrupt request bits
-	PCD_SetRegisterBitMask(FIFOLevelReg, 0x80);		// FlushBuffer = 1, FIFO initialization
+	PCD_SetRegisterBitMask(FIFOLevelReg, 0x80);			// FlushBuffer = 1, FIFO initialization
 	PCD_WriteRegisterMulti(FIFODataReg, sendLen, sendData);	// Write sendData to the FIFO
 	PCD_WriteRegister(BitFramingReg, bitFraming);		// Bit adjustments
 	PCD_WriteRegister(CommandReg, command);			// Execute the command
